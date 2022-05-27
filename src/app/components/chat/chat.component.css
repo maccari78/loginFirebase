@@ -1,0 +1,78 @@
+.cardContainer {
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.card-header {
+    background-color: rgb(102, 102, 243);
+    color: white;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 0.5rem;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/2d9dd173426833.5c08f5634ff45.png');
+}
+
+.imgEnviar:active {
+    transform: scale(0.9);
+}
+
+.enviado {
+    display: block;
+    float: right;
+    background-color: teal;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.recibido {
+    display: block;
+    float: left;
+    background-color: gray;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contenedorDeMensajes {
+    overflow: scroll;
+    padding: 0.3rem;
+}
+
+.contenedorDeMensajes::-webkit-scrollbar {
+    display: none;
+}
+
+.chatIconContainer {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: rgb(167,167,167);
+    border-radius: 100%;
+    box-shadow: 0 0 10px 2px rgb(71,71,71);
+}
+
+.chatIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.closeIcon {
+    position: absolute;
+    right: 0.5rem;
+    top: 0rem;
+    cursor: pointer;
+}

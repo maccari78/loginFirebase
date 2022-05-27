@@ -1,11 +1,23 @@
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="https://acortar.link/JyxeAl" width="30" height="30" class="d-inline-block align-top" alt="">
-        Firebase, Angular and Bootstrap Login
+        <img src="https://www.gstatic.com/devrel-devsite/prod/v2cfe3be7b1735e78718b242e557d4a47f9b52b339aa402465e5ba3f2d269c3cb/firebase/images/touchicon-180.png"
+            width="30" height="30" class="d-inline-block align-top" alt="">
+        Bootstrap
     </a>
-    <a class="navbar-brand" href="#" *ngIf="userLogged|async as user">
-        <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{ user.photoURL }}" width="30" height="30" class="d-inline-block align-top" alt="">
-        {{ user.email }}
-    </a>
+
+    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{ user.photoURL }}" width="30" height="30"
+            class="d-inline-block align-top" alt="">
+        {{ user.displayName?user.displayName : user.email }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="logout()">Salir</button>
+        </div>
+    </div>
+
+    <ng-template #btnIngresar>
+        <button class="btn btn-outline-primary" routerLink="/login">Ingresar</button>
+    </ng-template>
 </nav>
